@@ -1,0 +1,420 @@
+@charset "utf-8";
+@import "reset";
+
+
+$pc: 1024px; // PC
+$tab: 768px; // タブレット
+$sp: 560px;  // スマホ
+$sp-second: 425px;  // スマホ
+
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+
+
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+@mixin sp-second {
+    @media (max-width: ($sp-second)) {
+      @content;
+    }
+  }
+
+
+html{
+body{
+    
+    header{
+        width: 100%;
+        margin: 0 auto;
+        
+        .header-inner{
+            padding: 15px 10px;
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .logo{
+                width: 240px;
+
+                @include pc{
+                    width: 200px;
+                }
+
+
+            }/*logo*/
+
+            .header-nav{
+
+                @include tab{
+                    display: none;
+                }
+                
+                ul{  
+                    display: flex;
+                    width: 500px;
+                    justify-content: space-around;
+                    margin: 0 auto;
+
+                    @include pc{
+                        width: 450px;
+                    }
+
+
+
+                    li{
+                        list-style: none;
+                        font-size: 16px;
+                    }/*li*/
+                }
+            }
+
+
+        }/*inner*/
+    }/*header*/
+
+
+    .mainvisual{
+        height: 100%;
+        position: relative;
+
+        
+        img{
+            height: 60vh;
+            width: 100%;
+            opacity: 0.8;
+
+            @include pc{
+                height: 50vh;
+            }
+
+            @include tab{
+                height: 45vh;
+            }
+
+            @include sp{
+                height: 30vh;
+            }
+
+            @include sp-second{
+                height: 25vh;
+            }
+
+
+        }
+
+        h1{
+            display: none;
+            position: absolute;
+            top: 300px;
+            right: 160px;
+            font-size: 60px;
+            letter-spacing: 6px;
+        }
+
+    }/*mainvisual*/
+
+
+
+    .contact{
+        padding-top: 120px;
+        padding-bottom: 200px;
+        background-image: url(../img/common/pattern.png);
+        background-repeat: repeat;
+
+        @include tab{
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        @include sp-second(){
+            padding-top: 50px;
+        }
+
+        &_wrapper{
+            h2{
+                text-align: center;
+                font-size: 55px;
+
+                @include tab{
+                    font-size: 6.5vw;
+                }
+
+                span{
+                    margin-top: 40px;
+                    display: block;
+                    font-size: 20px;
+
+                    @include tab{
+                        font-size: 2.7vw;
+                    }
+
+                    @include sp-second{
+                        font-size: 16px;
+                    }
+
+
+                }/*span*/
+            }/*h2*/
+
+
+
+
+
+            .form{
+                width: 576px;
+                margin: 0 auto;
+                margin-top: 70px;
+        
+                @include tab{
+                    width: 530px;
+                }
+        
+                @include sp{
+                    width: 410px;
+                    margin-top: 50px;
+                }
+        
+                @include sp-second{
+                    width: 300px;
+                }
+        
+        
+        
+                .text-area{
+                    margin-bottom: 45px;
+        
+                    @include sp{
+                        margin-bottom: 35px;
+                    }
+        
+                    @include sp{
+                        margin-bottom: 25px;
+                    }
+        
+                    p{
+                        font-size: 18px;
+                        letter-spacing: 0.1em;
+                        padding-bottom: 13px;
+                        font-weight: bold;
+        
+                        @include sp{
+                            font-size: 16px;
+                        }
+        
+                        @include sp-second{
+                            padding-bottom: 10px;
+                            font-size: 14px;
+                        }
+                        
+        
+                    }/*p*/
+                    input{
+                        border: 1px solid black;
+                        width: 576px;
+                        height: 58px;
+                        padding: 10px 20px;
+                        background-color: white;
+                        
+                        @include tab{
+                            width: 530px;
+                        }
+        
+                        @include sp{
+                            width: 410px;
+                            height: 40px;
+                            padding: 10px 10px;
+                        }
+        
+                        @include sp-second{
+                            width: 300px;
+                            height: 40px;
+                        }
+                
+        
+                    }
+        
+                    .text-content{
+                        height: 250px;
+                        margin-bottom: 65px;
+
+                        @include tab{
+                            margin-bottom: 45px;
+                        }
+        
+                        @include sp{
+                            margin-bottom: 25px;
+                        }
+        
+                        @include sp-second{
+                            height: 150px;
+                        }
+        
+        
+                    }
+        
+                }/*text-area*/
+        
+                .btn_area{
+                    background-color: #F45E5E;
+                    width: 240px;
+                    text-align: center;
+                    padding: 25px 90px;
+                    margin: 0 auto;
+                    font-weight: bold;
+
+                    @include tab{
+                        width: 200px;
+                        padding: 15px 0px;
+                    }
+        
+        
+                    @include sp{
+                        padding: 15px 40px;
+                        width: 180px;
+                    }
+
+                  
+        
+                    input{
+                    display: inline-block;
+                    font-size: 18px;
+                    color: white;
+                    }
+                 
+                }/*btn_area*/
+        
+                .btn_area:hover{
+                  opacity: 0.7;
+                  transition: 0.6s;
+                }
+            }/*form*/
+
+        }/*wrapper*/
+    }/*contact*/
+
+
+.image_bottom{
+    width: 100%;
+    height: 350px;
+    background-image: url(../img/contact/work.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    @include tab{
+        height: 40vh;
+    }
+
+    @include sp-second(){
+        height: 25vh;
+    }
+
+
+}/*img_bottom*/
+
+.image_bottom::after{
+
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0.5;
+    display:block
+
+}
+
+
+
+
+    footer{
+        width: 100%;
+        margin: 0 auto;
+        z-index: 1;
+        padding-bottom: 30px;
+        padding-top: 30px;
+        
+
+        .footer_inner{
+            max-width: 1280px;
+            width: 100%;
+
+            margin: 0 auto;
+            text-align: center;
+
+
+            .logo{
+                width: 320px;
+
+                @include sp-second(){
+                    width: 200px;
+                }
+
+            }/*logo*/
+
+            .footer-nav{
+                margin-top: 30px;
+
+                @include sp-second(){
+                    margin-top: 20px;
+                }
+
+                
+
+                ul{
+                    display: flex;
+                    max-width: 500px;
+                    width: 100%;
+                    justify-content: space-around;
+                    margin: 0 auto;
+                    padding-right: 15px;
+                    padding-left: 15px;
+
+
+                    @include sp-second(){
+                        padding-right: 10px;
+                        padding-left: 10px;  
+                    }
+
+
+                    li{
+                        list-style: none;
+                        font-size: 18px;
+
+                        @include sp-second(){
+                            font-size: 16px;
+                        }
+
+
+                    }/*li*/
+                }
+            }
+
+
+        }/*inner*/
+    }/*footer*/
+
+
+
+
+
+}/*body*/
+}/*html*/
+
