@@ -34,25 +34,32 @@ $sp-second: 425px;  // スマホ
 
 html{
 body{
-  
+    font-family: 'Open Sans', sans-serif;  
+   
     header{
         width: 100%;
         margin: 0 auto;
+    
         
         .header-inner{
-            padding: 15px 10px;
-            max-width: 1280px;
+            max-width: 1380px;
+            padding: 5px 10px;
             width: 100%;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
 
+
             .logo{
-                width: 240px;
+                width: 440px;
 
                 @include pc{
-                    width: 200px;
+                    width: 340px;
+                }
+
+                @include sp-second(){
+                    width: 240px;
                 }
 
 
@@ -61,8 +68,23 @@ body{
             .header-nav{
 
                 @include tab{
-                    display: none;
+                    position: fixed;
+                    width: 250px;
+                    top: 0;
+                    right: -300px;
+                    background-color: #ffffff;
+                    height: 100%;
+                    padding-top: 60px;
+                    z-index: 100;
+                    transition: .7s;
+                    padding-top: 100px;
                 }
+
+                @include sp-second(){
+                    width: 200px;
+                }
+                
+
                 
                 ul{  
                     display: flex;
@@ -74,15 +96,102 @@ body{
                         width: 450px;
                     }
 
+                    @include tab{
+                        width: 250px;
+                        display: block;
+                        text-align: center;
+                    }
+
+                    @include sp-second(){
+                        width: 200px;
+                    }
 
                     li{
                         list-style: none;
-                        font-size: 16px;
+                        font-size: 18px;
+
+                        @include tab{
+                            font-size: 25px;
+                            padding-bottom: 30px;
+                        }
+
+                    
+
                     }/*li*/
-                }
+
+                    li:hover{
+                        opacity: 0.5;
+                    }/*li*/                   
+                }/*ul*/
+            }/*nav*/
+
+
+
+        .btn-gnavi{
+            display: none;
+
+            @include tab{
+                display: initial;
+                position: fixed;
+                top: 25px;
+                right: 27px;
+                width: 30px;
+                height: 24px;
+                z-index: 120;
+                cursor: pointer;
+                transition: all 400ms;
+                -webkit-transition:all 400ms;
+            }
+
+            @include sp-second(){
+                top: 17px;
             }
 
 
+    span {
+        @include tab{
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            background: black;
+            border-radius: 10px;
+            -webkit-transition: all 400ms;
+            transition: all 400ms
+        }
+
+    }
+  
+     span:nth-child(1){
+        top: 0;
+      }
+    
+      span:nth-child(2){
+        top: 10px;
+      }
+    
+      span:nth-child(3){
+        top: 20px;
+      }
+   
+    }/*g-navi*/
+
+        .btn-gnavi.hb-open span{
+            background: black;
+        }
+
+        .btn-gnavi.hb-open span:nth-child(1){
+            -webkit-transform: translateY(15px) rotate(-45deg);
+            transform: translateY(15px) rotate(-45deg);
+        }
+      
+        .btn-gnavi.hb-open span:nth-child(2){
+            opacity: 0;
+        }
+      
+        .btn-gnavi.hb-open span:nth-child(3){
+            -webkit-transform: translateY(-5px) rotate(45deg);
+            transform: translateY(-5px) rotate(45deg);
+        }
         }/*inner*/
     }/*header*/
 
@@ -145,7 +254,7 @@ body{
 
         &_wrapper{
             width: 100%;
-            max-width: 1300px;
+            max-width: 1100px;
             margin: 0 auto;
 
             .item{
@@ -246,8 +355,8 @@ body{
                 }/*item_block*/
 
                 img{
-                    width: 580px;
-                    height: 350px;
+                    width: 480px;
+                    height: 320px;
 
                     @include pc{
                         width: 380px;
@@ -303,52 +412,15 @@ body{
 
 
 
-.middle_content{
-    width: 100%;
+
+.service_us{
+    padding-top: 90px;
+    padding-bottom: 90px;
     background-color: #F8F8F8;
-    padding-top: 100px;
-    padding-bottom: 100px;
 
-    @include sp-second(){
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-
-
-    .middle_item{
-        display: flex;
-        justify-content: center;
-
-        @include pc{
-            display: block;
-            margin: 0 auto;
-        }
-
-
-
-        .middle_block{
-            width: 530px;
-            background-color: white;
-            padding: 70px 50px;
-            
-            @include pc{
-                margin: 0 auto;
-            }
-
-            @include tab{
-                text-align: center;
-                padding: 70px 30px;
-            }
-
-            @include sp{
-                padding: 40px 30px;
-                width: 400px;
-            }
-
-            @include sp{
-                width: 300px;
-            }
-
+    .us_item{
+        text-align: center;
+        margin: 0 auto;
 
 
             h2{
@@ -359,11 +431,7 @@ body{
                 padding-bottom: 10px;  
                 
                 @include sp{
-                    font-size: 35px;
-                }
-
-                @include sp-second(){
-                    font-size: 26px;
+                    font-size: 34px;
                 }
 
                 
@@ -372,7 +440,7 @@ body{
             h2:before{
                 content: '';
                 position: absolute;
-                left: 11%;
+                left: 50%;
                 bottom: 0px; /*下線の上下位置調整*/
                 display: inline-block;
                 width: 55px; /*下線の幅*/
@@ -393,32 +461,67 @@ body{
                 font-size: 20px;
             }/*span*/
 
-            p{
-                margin-top: 35px;
-                margin-bottom: 40px;
-
-                @include pc{
-                    margin-top: 15px;
-                    margin-bottom: 20px;
-                }
-
+            .service_img{
+                display: flex;
+                margin: 0 auto;
+                width: 700px;
+                padding-top: 70px;
+                padding-bottom: 30px;
+                justify-content: space-around;
 
                 @include tab{
-                    margin-top: 25px;
-                    margin-bottom: 40px;
+                    width: 480px;
                 }
 
                 @include sp{
-                    font-size: 14px;
+                    width: 370px;
+                    padding-top: 50px;
+                    padding-bottom: 20px;    
                 }
 
+                @include sp-second(){
+                    flex-wrap: wrap;
+                    width: 160px;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+                   
+
+                img{
+                    margin-bottom: 30px;
+                }
+                   
+
+
+            }
+
+            p{
+                width: 700px;
+                margin: 0 auto;
+                margin-bottom: 40px;
+
+
+                @include tab{
+                    width: 530px;
+                }
+
+                @include sp{
+                    width: 400px;
+                    margin-top: 0px;
+                }
+
+                @include sp{
+                    width: 90%;
+                }
+                   
+                   
                 
             }
 
             .btn{
                 width: 160px;
                 background-color: #F45E5E;
-                margin: left;
+                margin: 0 auto;
                 text-align: center;
 
                 @include tab{
@@ -428,7 +531,7 @@ body{
                     a{
                         display: block;
                         color: white;
-                        font-size: 20px;
+                        font-size: 16px;
                         padding: 12px ;
                     }
     
@@ -438,19 +541,9 @@ body{
     
             }/*btn*/
 
-        }/*item_block*/
-
-        img{
-            width: 580px;
-
-            @include pc{
-                display: none;
-            }
-
-        }
 
     }/*item*/
-}/*content*/
+}
 
 
 
@@ -547,6 +640,9 @@ body{
 .last_content{
     padding-top: 100px;
     padding-bottom: 140px;
+    background-image: url(../img/common/pattern.png);
+    background-repeat: repeat;
+
 
     @include sp-second(){
         padding-bottom: 100px;
@@ -649,8 +745,8 @@ body{
                 }
 
                 h2{
-                    font-size: 40px;
-                    margin-bottom: 10px;
+                    font-size: 36px;
+                    margin-bottom: 35px;
                     display: inline-block;
                     position: relative;  
                     padding-bottom: 10px;  
@@ -683,13 +779,7 @@ body{
 
                 }
 
-                h3{
-                    display: block;
-                    font-size: 20px;
-                }/*span*/
-
                 p{
-                    margin-top: 35px;
                 }
 
             }/*item_block*/
@@ -709,29 +799,21 @@ footer{
     width: 100%;
     margin: 0 auto;
     z-index: 1;
-    padding-bottom: 30px;
-    padding-top: 30px;
-    
+    padding-top: 20px;
+    padding-bottom: 20px;
+
 
     .footer_inner{
         max-width: 1280px;
         width: 100%;
-
         margin: 0 auto;
         text-align: center;
 
 
-        .logo{
-            width: 320px;
-
-            @include sp-second(){
-                width: 200px;
-            }
-
-        }/*logo*/
+    
 
         .footer-nav{
-            margin-top: 30px;
+            margin-top: 10px;
 
             @include sp-second(){
                 margin-top: 20px;
@@ -763,14 +845,33 @@ footer{
                         font-size: 16px;
                     }
 
-
                 }/*li*/
-            }
-        }
 
+                li:hover{
+                    opacity: 0.7;
+                }
+
+            }/*ul*/
+        }/*nav*/
+
+        .address{
+            margin-top: 20px;
+            color: rgb(128, 128, 128);
+
+            @include sp{
+                padding-top: 20px;
+                font-size: 12px;
+                width: 80%;
+                margin: 0 auto;
+            }
+
+
+        }/*address*/
 
     }/*inner*/
+
 }/*footer*/
+
 
 }/*body*/
 }/*html*/

@@ -3,7 +3,7 @@
 @import "reset";
 
 
-$pc: 1024px; // PC
+$pc: 1130px; // PC
 $tab: 768px; // タブレット
 $sp: 560px;  // スマホ
 $sp-second: 425px;  // スマホ
@@ -35,7 +35,14 @@ $sp-second: 425px;  // スマホ
 @mixin font-type {
   font-family: 'Montserrat', sans-serif;
 }
+
 html{
+
+  body{
+
+    font-family: 'Open Sans', sans-serif;
+  
+  
 
   header{
     position: relative;
@@ -45,11 +52,29 @@ html{
       top: 300px;
       left:140px;
 
+      @include tab{
+          top: 80px;
+          left:80px;
+      }
+
+
+      @include sp{
+    }
+
       ul{
+          
         li{
           padding-bottom: 25px;
           font-size: 25px;
           list-style: none;
+
+          @include tab{
+              font-size: 20px;
+          }
+
+          @include sp{
+              display: none;
+        }
 
           a{
 
@@ -63,20 +88,15 @@ html{
 
         }/*li*/
       }/*ul*/
+
     }/*inner*/
 
   }/*header*/
 
   
 
-body{
-
-  font-family: 'Open Sans', sans-serif;
-
-
   .mainvisual{
     width: 100%;
-    margin-bottom: 80px;
 
     img{
       width: 100%;
@@ -87,21 +107,69 @@ body{
 
 
   .intro{
+    padding-top: 120px;
+    background-image: url(../img/common/pattern.png);
+    background-repeat: repeat;
+
+    
+    @include sp-second(){
+        padding-top: 80px;
+    }
+
+
+
     &_wrap{
 
       .intro_text_box{
-        width: 1250px;
+        width: 1020px;
         margin: 0 auto;
         text-align: center;
 
 
+        @include pc{
+            width: 740px;
+        }
+
+        @include tab{
+            width: 90%;
+        }
+
+
+     
+
+
         h2{
-          font-size: 40px;
+        width: 900px;
+        margin: 0 auto;
+          font-size: 30px;
           margin-bottom: 28px;
           display: inline-block;
           position: relative;  
           padding-bottom: 10px;   
           text-align: center;
+
+          @include pc{
+            width: 740px;
+            font-size: 27px;
+        }
+
+
+        @include tab{
+            font-size: 25px;
+            max-width: 768px;
+            width: 100%;
+        }
+
+        @include sp{
+            font-size: 23px;
+        }
+
+        @include sp-second(){
+            font-size: 20px;
+        }
+
+
+
       }/*h2*/
   
   
@@ -111,7 +179,7 @@ body{
         left: 50%;
         bottom: 0px; /*下線の上下位置調整*/
         display: inline-block;
-        width: 55px; /*下線の幅*/
+        width: 125px; /*下線の幅*/
         height: 2px; /*下線の太さ*/
         -moz-transform: translateX(-50%);
         -webkit-transform: translateX(-50%);
@@ -121,25 +189,55 @@ body{
     }
 
     .concept_p{
+        padding-top: 40px;
       width: 700px;
       margin: 0 auto;
       font-size: 25px;
-      padding-bottom: 40px;
+      padding-bottom: 60px;
 
       @include tab{
           width: 80vw;
       }
 
+     @include sp-second(){
+            font-size: 20px;
+        }
+
+        @include sp-second(){
+            font-size: 16px;
+            padding-top: 30px;
+            padding-bottom: 40px;
+        }
+
+
+
+
   }/*p*/
       }/*text_box*/
 
       .intro_box{
+          background-color: white;
         display: flex;
         justify-content: space-between;
-        width: 1150px;
+        width: 1100px;
         margin: 0 auto;
-        padding: 63px 60px;
+        padding: 63px 40px;
         box-shadow: 2px 2px 4px rgb(184, 184, 184);
+
+        @include pc{
+            width: 750px;
+            display: block;
+            text-align: center;
+        }
+
+        @include tab{
+            max-width: 768px;
+            width: 95%;
+        }
+
+        @include sp{
+            width: 90%;
+        }
 
 
         .right_box{
@@ -147,13 +245,13 @@ body{
 
           h2{
             font-size: 40px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             display: inline-block;
             position: relative;  
             padding-bottom: 10px;  
 
             @include tab{
-                font-size: 30px;
+                font-size: 25px;
             }
                               
         }/*h2*/
@@ -161,7 +259,7 @@ body{
         h2:before{
             content: '';
             position: absolute;
-            left: 8%;
+            left:12%;
             bottom: 0px; /*下線の上下位置調整*/
             display: inline-block;
             width: 55px; /*下線の幅*/
@@ -172,23 +270,93 @@ body{
             transform: translate(-50%); /*位置調整*/
             background-color: #E60115; /*下線の色*/ 
 
+            @include pc{
+                left:50%;
+            }
+
+
             @include tab{
                 left: 50%;
             } 
-            
           
         }
 
           p{
             width: 550px;
+            line-height: 1.7;  
+
+            @include pc{
+                margin: 0 auto;
+                max-width: 650px;
+            }
+
+            @include tab{
+                width: 98%;
+                font-size: 14px;
+            }
           }
+
 
         }/*right_boox*/
 
-        img{
-          width: 425px;
-          height: 312px;
+        #banner{
+            width: 450px;
+
+            @include pc{
+                margin: 0 auto;
+                margin-top: 30px;
+                width: 500px;
+            }
+
+            @include tab{
+                max-width: 600px;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            .banner-1{
+                width: 450px;
+                height: 120px;
+                border: 1px solid rgb(158, 158, 158);
+            }
+
+            .banner-2{
+                margin-top: 20px;
+                padding: 10px 15px;
+                width: 450px;
+                height: 100px;
+                border: 1px solid rgb(158, 158, 158);
+            }
+
+            #img_banner{
+                margin-top: 30px;
+                height: 100px;
+                border: 1px solid rgb(107, 107, 107);
+
+                
+                @include pc{
+                    width: 500px;
+                }
+
+                @include tab{
+                    margin-top: 15px;
+                    max-width: 600px;
+                    width: 95%;
+                    height: 15vw;
+                }
+        
+
+
+            }
+
+            #img_banner:hover{
+                opacity: 0.7;
+            }
+
+
         }
+
+   
 
       }/*intro_box*/
 
@@ -199,14 +367,13 @@ body{
         width: 100%;
         margin: 0 auto;
         padding-top: 100px;   
-        background-color: #FDFEFE;
         padding-bottom: 100px;   
         text-align: center;
         margin-top: 50px;
         
 
         @include pc{
-            max-width: 720px;
+            max-width: 750px;
         }
 
         @include tab{
@@ -215,11 +382,11 @@ body{
 
         @include sp{
             padding-top: 60px;   
-            padding-bottom: 30px;
+            padding-bottom: 50px;
         }
-      
-      
 
+      
+      
 
         h2{
             font-size: 40px;
@@ -228,6 +395,12 @@ body{
             position: relative;  
             padding-bottom: 10px;   
             text-align: center;
+
+            @include tab{
+                font-size: 25px;
+            }
+                     
+
         }/*h2*/
 
 
@@ -251,15 +424,19 @@ body{
             margin: 0 auto;
             justify-content: space-around;
             display: flex;
-            padding-top: 80px;
+            padding-top: 60px;
 
             @include pc{
-                width: 700px;
+                width: 550px;
+                flex-wrap: wrap;
+                justify-content: space-around;
             }
+
 
             @include tab{
                 justify-content: center;
                 width: 88vw;
+                padding-top: 30px;   
             }
 
             @include sp{
@@ -269,13 +446,14 @@ body{
             .box{
                 width: 245px;
                 text-align: center;
-                padding-top: 25px;
-                padding-bottom: 45px;
+                padding-top: 20px;
+                padding-bottom: 35px;
                 box-shadow: 2px 2px 4px rgb(184, 184, 184);
                 background-color: #FBFCFC;
 
                 @include pc{
-                    width: 200px;
+                    width: 240px;
+                    margin-bottom: 30px;
                 }
 
             @include tab{
@@ -285,8 +463,25 @@ body{
             }
 
 
+            @include sp-second(){
+                width: 215px;
+                padding-top: 10px;
+                padding-bottom: 25px;
+            }
+
             @include sp{
                 margin-bottom: 30px;
+            }
+
+
+            img{
+                margin-top: 30px;
+                margin-bottom: 30px;
+
+                @include sp-second(){
+                    margin-bottom: 15px;
+                }
+
             }
 
                 h3{
@@ -297,6 +492,8 @@ body{
 
                 .box_p{
                     font-size: 15px;
+                    width: 90%;
+                    margin: 0 auto;
                 }/*box_ps*/
 
             }/*box*/
@@ -311,6 +508,12 @@ body{
           @include tab{
               width: 140px;
           }    
+
+
+          @include sp(){
+            margin-top: 30px;
+            width: 220px;
+        }
               
               a{
                   display: block;
@@ -331,11 +534,6 @@ body{
       }/*btn*/
 
     }/*content*/
-
-
-
-
-
 
     }/*wrap*/
   }/*intro*/
@@ -358,6 +556,10 @@ body{
       height: 250px;
   }
 
+  @include sp-second(){
+    height: 200px;
+}
+
   .text_block{
       text-align: center;
       padding-top: 100px;
@@ -369,14 +571,41 @@ body{
       -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
 
+      @include pc{
+        max-width: 1000px;
+        width: 85%;
+    }
+
+
+
       @include tab{
           padding-top: 50px;
+          width: 100%;
       }
+
+      @include sp{
+        padding-top: 70px;
+    }
+
+
+    @include sp-second(){
+        padding-top: 50px;
+    }
+
+
+
   
   
       h2{
           margin-bottom: 50px;
           color: white;
+
+          @include pc{
+            font-size: 20px;
+            max-width: 1000px;
+            width: 85%;
+            margin: 0 auto;
+        }
 
 
       @include tab{
@@ -384,14 +613,32 @@ body{
           font-size: 20px;
       }
 
+      @include sp{
+        font-size: 16px;
+        width: 98%;
+    }
+
+
       @include sp-second(){
-     width: 280px;
+        width: 95%;
+        font-size: 14px;
+        margin-bottom: 10px;
       }
   
       }/*h2*/
 
       h3{
         color: white;
+
+        @include pc{
+            margin-top: 30px;
+        }
+
+        @include sp{
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
       }
 
       .btn{
@@ -443,8 +690,10 @@ body{
 
   .item{
     display: flex;
-    justify-content: space-around;
-    padding-top: 170px;
+    justify-content: space-between;
+    padding-top: 100px;
+    max-width: 1020px;
+    margin: 0 auto;
 
     @include pc{
         width: 765px;
@@ -464,8 +713,11 @@ body{
     }
 
     @include sp-second(){
-        width: 300px;
+        width: 90%;
     }
+
+
+
 
     .item_block{
         width: 470px;
@@ -480,15 +732,13 @@ body{
         }
 
         @include sp{
-            width: 420px;
+            max-width: 420px;
+            width: 100%;
         }
 
-        @include sp-second(){
-            width: 300px;
-        }
-
+   
         h2{
-            font-size: 32px;
+            font-size: 40px;
             margin-bottom: 28px;
             display: inline-block;
             position: relative;  
@@ -530,8 +780,15 @@ body{
         p{
 
             @include tab{
-                text-align: left;
+                text-align: center;
             }
+
+            @include sp-second(){
+                width: 95%;
+                margin: 0 auto;
+            }
+
+
         }/*p*/
 
         .btn{
@@ -542,7 +799,13 @@ body{
 
           @include tab{
               width: 140px;
+              margin: 0 auto;
+              margin-top: 30px;
           }    
+
+          @include sp{
+              width: 220px;
+          }
               
               a{
                   display: block;
@@ -566,8 +829,8 @@ body{
     }/*item_block*/
 
     img{
-        width: 580px;
-        height: 350px;
+        width: 480px;
+        height: 330px;
 
         @include pc{
             width: 380px;
@@ -575,20 +838,9 @@ body{
         }
 
         @include tab{
-            margin-top: 70px;
-            width: 480px;
-            height: 350px;    
+            display: none;  
         }
 
-        @include sp{
-            width: 380px;
-            height: 300px;  
-     }
-
-     @include sp-second(){
-        width: 300px;
-        height: 230px;  
-    }
     }/*img*/
 
 }/*item*/
@@ -599,6 +851,9 @@ body{
 
 
 .voice{
+    background-image: url(../img/common/pattern.png);
+    background-repeat: repeat;
+    
   &_wrap{
 
 
@@ -607,10 +862,9 @@ body{
       width: 100%;
       margin: 0 auto;
       padding-top: 100px;   
-      background-color: #FDFEFE;
       padding-bottom: 100px;   
       text-align: center;
-      margin-top: 50px;
+      margin-top: 100px;
       
 
       @include pc{
@@ -627,8 +881,6 @@ body{
       }
     
     
-
-
       h2{
           font-size: 40px;
           margin-bottom: 28px;
@@ -655,15 +907,18 @@ body{
       }
 
       .box-wrap{
-          width: 1180px;
+          width: 1100px;
           margin: 0 auto;
           justify-content: space-around;
           display: flex;
           padding-top: 80px;
 
           @include pc{
-              width: 700px;
-          }
+            max-width: 740px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 40px;
+        }
 
           @include tab{
               justify-content: center;
@@ -677,34 +932,63 @@ body{
           .box{
             width: 335px;
             box-shadow: 2px 2px 4px rgb(184, 184, 184);
-            padding-bottom: 45px;
+            padding-bottom: 25px;
+            background-color: #FDFEFE;
+
+            @include pc{
+                margin: 20px 15px;
+            }
 
 
             img{
-              width: 335px;
-              height: 315px;
+              padding-top: 30px;
+              width: 200px;
+              height: 215px;
+
+              @include sp-second(){
+                  width: 170px;
+                  height: 180px;
+              }
             }
 
 
 
           h3{
             margin-top: 15px;
+            font-size: 24px;
 
+            @include sp-second(){
+                font-size: 20px;
+            }
             
             span{
               display: block;
-              font-size: 12px;
+              font-size: 14px;
               color: #646464;
-              margin-top: 15px;
+              margin-top: 10px;
             }/*span*/
+            
           }/*h3*/
 
           .box_p{
+            width: 90%;
+            margin: 0 auto;
             margin-top: 25px;
+
+            @include sp-second(){
+                font-size: 14px;
+            }
+
           }
 
           audio{
-            margin-top: 15px;
+            margin-top: 30px;
+
+            @include sp-second(){
+                width: 270px;
+            }
+
+
           }
 
 
@@ -846,29 +1130,21 @@ footer{
   width: 100%;
   margin: 0 auto;
   z-index: 1;
-  padding-bottom: 30px;
-  padding-top: 30px;
-  
+  padding-top: 20px;
+  padding-bottom: 20px;
+
 
   .footer_inner{
       max-width: 1280px;
       width: 100%;
-
       margin: 0 auto;
       text-align: center;
 
 
-      .logo{
-          width: 320px;
-
-          @include sp-second(){
-              width: 200px;
-          }
-
-      }/*logo*/
+  
 
       .footer-nav{
-          margin-top: 30px;
+          margin-top: 10px;
 
           @include sp-second(){
               margin-top: 20px;
@@ -900,14 +1176,31 @@ footer{
                       font-size: 16px;
                   }
 
-
               }/*li*/
-          }
-      }
 
+              li:hover{
+                  opacity: 0.7;
+              }
+
+          }/*ul*/
+      }/*nav*/
+
+      .address{
+          margin-top: 20px;
+          color: rgb(128, 128, 128);
+
+          @include sp{
+            padding-top: 20px;
+            font-size: 12px;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+      }/*address*/
 
   }/*inner*/
 }/*footer*/
+
 
 }
 }
