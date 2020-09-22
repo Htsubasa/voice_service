@@ -569,6 +569,7 @@ body{
         transform: translateX(-50%);
         -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
+        width: 100%;
 
         @include tab{
             padding-top: 50px;
@@ -576,6 +577,7 @@ body{
     
     
         h2{
+            width: 100%;
             margin-bottom: 50px;
             color: white;
 

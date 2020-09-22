@@ -992,6 +992,7 @@ html body .image_bottom .text_block {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   /*h2*/
+  /*h3*/
   /*btn*/
 }
 
@@ -1002,8 +1003,10 @@ html body .image_bottom .text_block {
 }
 
 html body .image_bottom .text_block h2 {
-  margin-bottom: 50px;
+  width: 100%;
   color: white;
+  margin-bottom: 20px;
+  font-size: 25px;
 }
 
 @media (max-width: 768px) {
@@ -1017,6 +1020,14 @@ html body .image_bottom .text_block h2 {
   html body .image_bottom .text_block h2 {
     width: 280px;
   }
+}
+
+html body .image_bottom .text_block h3 {
+  color: white;
+}
+
+html body .image_bottom .text_block p {
+  color: white;
 }
 
 html body .image_bottom .text_block .btn {

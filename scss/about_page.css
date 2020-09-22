@@ -951,6 +951,7 @@ html body .image_bottom .text_block {
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
+  width: 100%;
   /*h2*/
   /*btn*/
 }
@@ -962,6 +963,7 @@ html body .image_bottom .text_block {
 }
 
 html body .image_bottom .text_block h2 {
+  width: 100%;
   margin-bottom: 50px;
   color: white;
 }

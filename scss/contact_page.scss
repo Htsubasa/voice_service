@@ -281,7 +281,7 @@ body{
         &_wrapper{
             h2{
                 text-align: center;
-                font-size: 55px;
+                font-size: 36px;
 
                 @include tab{
                     font-size: 6.5vw;
@@ -448,6 +448,7 @@ body{
     background-size: cover;
     background-position: center;
     position: relative;
+
 
     @include tab{
         height: 40vh;
