@@ -543,7 +543,7 @@ html body .mainvisual img {
 
 html body .mainvisual h1 {
   position: absolute;
-  top: 270px;
+  top: 120px;
   left: 120px;
   font-size: 60px;
   letter-spacing: 6px;
@@ -884,7 +884,7 @@ html body .item_wrap .item_text p {
 }
 
 html body .item_wrap .item_box_wrap {
-  margin-top: 60px;
+  padding-top: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

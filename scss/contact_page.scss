@@ -281,28 +281,44 @@ body{
         &_wrapper{
             h2{
                 text-align: center;
-                font-size: 36px;
+                font-size: 32px;
+
 
                 @include tab{
-                    font-size: 6.5vw;
+                    font-size: 20px;
                 }
 
-                span{
-                    margin-top: 40px;
-                    display: block;
-                    font-size: 20px;
+                @include sp{
+                    font-size: 18px;
+                }
 
-                    @include tab{
-                        font-size: 2.7vw;
-                    }
-
-                    @include sp-second{
-                        font-size: 16px;
-                    }
-
-
-                }/*span*/
+                @include sp-second(){
+                    font-size: 5vw;
+                }
             }/*h2*/
+
+            h3{
+                font-size: 16px;
+                text-align: center;
+                margin-top: 30px;
+                line-height: 1.5em;
+
+                @include sp{
+                    font-size: 14px;
+                }
+
+                @include sp-second(){
+                    font-size: 3.5vw;
+                }
+
+                .sp_br{
+                    display: none;
+                    @include sp{
+                        display: initial;
+                    }
+                }
+                
+            }
 
 
 

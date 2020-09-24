@@ -618,31 +618,53 @@ html body .contact_wrapper {
 
 html body .contact_wrapper h2 {
   text-align: center;
-  font-size: 36px;
-  /*span*/
+  font-size: 32px;
 }
 
 @media (max-width: 768px) {
   html body .contact_wrapper h2 {
-    font-size: 6.5vw;
+    font-size: 20px;
   }
 }
 
-html body .contact_wrapper h2 span {
-  margin-top: 40px;
-  display: block;
-  font-size: 20px;
-}
-
-@media (max-width: 768px) {
-  html body .contact_wrapper h2 span {
-    font-size: 2.7vw;
+@media (max-width: 560px) {
+  html body .contact_wrapper h2 {
+    font-size: 18px;
   }
 }
 
 @media (max-width: 425px) {
-  html body .contact_wrapper h2 span {
-    font-size: 16px;
+  html body .contact_wrapper h2 {
+    font-size: 5vw;
+  }
+}
+
+html body .contact_wrapper h3 {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 30px;
+  line-height: 1.5em;
+}
+
+@media (max-width: 560px) {
+  html body .contact_wrapper h3 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 425px) {
+  html body .contact_wrapper h3 {
+    font-size: 3.5vw;
+  }
+}
+
+html body .contact_wrapper h3 .sp_br {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  html body .contact_wrapper h3 .sp_br {
+    display: initial;
   }
 }
 

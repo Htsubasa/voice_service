@@ -542,7 +542,7 @@ html body .mainvisual img {
 
 html body .mainvisual h1 {
   position: absolute;
-  top: 270px;
+  top: 130px;
   left: 120px;
   font-size: 60px;
   letter-spacing: 6px;
@@ -946,7 +946,7 @@ html body .image_bottom .text_block {
   padding-top: 100px;
   z-index: 2;
   position: absolute;
-  top: 0;
+  top: -30px;
   left: 50%;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
@@ -959,25 +959,57 @@ html body .image_bottom .text_block {
 @media (max-width: 768px) {
   html body .image_bottom .text_block {
     padding-top: 50px;
+    top: -10px;
   }
 }
 
 html body .image_bottom .text_block h2 {
-  width: 100%;
-  margin-bottom: 50px;
   color: white;
+  margin-bottom: 20px;
+  font-size: 28px;
 }
 
 @media (max-width: 768px) {
   html body .image_bottom .text_block h2 {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     font-size: 20px;
   }
 }
 
 @media (max-width: 425px) {
   html body .image_bottom .text_block h2 {
-    width: 280px;
+    font-size: 16px;
+  }
+}
+
+html body .image_bottom .text_block h3 {
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  html body .image_bottom .text_block h3 {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 425px) {
+  html body .image_bottom .text_block h3 {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+html body .image_bottom .text_block h3 br {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  html body .image_bottom .text_block h3 br {
+    display: initial;
   }
 }
 
@@ -989,7 +1021,7 @@ html body .image_bottom .text_block .btn {
 
 @media (max-width: 768px) {
   html body .image_bottom .text_block .btn {
-    width: 140px;
+    width: 200px;
   }
 }
 
@@ -1008,6 +1040,8 @@ html body .image_bottom .text_block .btn a {
 
 html body .image_bottom .text_block .btn a:hover {
   opacity: 0.7;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 html body .image_bottom::after {
@@ -1024,10 +1058,8 @@ html body .image_bottom::after {
 }
 
 html body .last_content {
-  padding-top: 100px;
+  padding-top: 80px;
   padding-bottom: 140px;
-  background-image: url(../img/common/pattern.png);
-  background-repeat: repeat;
   /*warap*/
 }
 
